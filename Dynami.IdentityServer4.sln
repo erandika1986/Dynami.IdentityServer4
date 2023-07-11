@@ -5,15 +5,15 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4B111FE5-8605-4BAF-A6E8-C06B08C1BE53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynami.IdentityServer4", "src\Dynami.IdentityServer4\Dynami.IdentityServer4.csproj", "{28BCEC69-A078-4BB3-9428-7C966320BAC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dynami.IdentityServer4", "src\Dynami.IdentityServer4\Dynami.IdentityServer4.csproj", "{28BCEC69-A078-4BB3-9428-7C966320BAC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynami.IdentityServer4.Storage", "src\Dynami.IdentityServer4.Storage\Dynami.IdentityServer4.Storage.csproj", "{6BAD1CB9-7F99-442C-AB0A-FB8D75FE509F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dynami.IdentityServer4.Storage", "src\Dynami.IdentityServer4.Storage\Dynami.IdentityServer4.Storage.csproj", "{6BAD1CB9-7F99-442C-AB0A-FB8D75FE509F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynami.IdentityServer4.EntityFramework.Storage", "src\Dynami.IdentityServer4.EntityFramework.Storage\Dynami.IdentityServer4.EntityFramework.Storage.csproj", "{5CDD34C9-6420-4B97-8B9F-A5FF2EC115C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dynami.IdentityServer4.EntityFramework.Storage", "src\Dynami.IdentityServer4.EntityFramework.Storage\Dynami.IdentityServer4.EntityFramework.Storage.csproj", "{5CDD34C9-6420-4B97-8B9F-A5FF2EC115C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynami.IdentityServer4.EntityFramework", "src\Dynami.IdentityServer4.EntityFramework\Dynami.IdentityServer4.EntityFramework.csproj", "{87D259CB-1AF7-4398-88DC-C3E1C3362BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dynami.IdentityServer4.EntityFramework", "src\Dynami.IdentityServer4.EntityFramework\Dynami.IdentityServer4.EntityFramework.csproj", "{87D259CB-1AF7-4398-88DC-C3E1C3362BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynami.IdentityServer4.AspNetIdentity", "src\Dynami.IdentityServer4.AspNetIdentity\Dynami.IdentityServer4.AspNetIdentity.csproj", "{58F32CE1-0C11-4228-A260-299F9DFCAA75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dynami.IdentityServer4.AspNetIdentity", "src\Dynami.IdentityServer4.AspNetIdentity\Dynami.IdentityServer4.AspNetIdentity.csproj", "{58F32CE1-0C11-4228-A260-299F9DFCAA75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
