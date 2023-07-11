@@ -1,10 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using System;
-using System.Threading.Tasks;
-using Dynami.IdentityServer4.EntityFramework.Entities;
+﻿using Dynami.IdentityServer4.EntityFramework.Entities;
 using Dynami.IdentityServer4.EntityFramework.Extensions;
 using Dynami.IdentityServer4.EntityFramework.Interfaces;
 using Dynami.IdentityServer4.EntityFramework.Options;

@@ -1,7 +1,6 @@
 ﻿
 using Dynami.IdentityServer4.EntityFramework.DbContexts;
 using Dynami.IdentityServer4.EntityFramework.Interfaces;
-using System;
 using Dynami.IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

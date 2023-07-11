@@ -1,18 +1,10 @@
-// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Dynami.IdentityServer4.EntityFramework.Interfaces;
 using Dynami.IdentityServer4.EntityFramework.Mappers;
+using Dynami.IdentityServer4.Extensions;
 using Dynami.IdentityServer4.Models;
 using Dynami.IdentityServer4.Stores;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using System;
-using Dynami.IdentityServer4.Extensions;
+using Microsoft.Extensions.Logging;
 
 namespace Dynami.IdentityServer4.EntityFramework.Stores
 {

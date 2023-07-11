@@ -1,6 +1,4 @@
-﻿
-using System;
-using Dynami.IdentityServer4.EntityFramework.Entities;
+﻿using Dynami.IdentityServer4.EntityFramework.Entities;
 using Dynami.IdentityServer4.EntityFramework.Extensions;
 using Dynami.IdentityServer4.EntityFramework.Interfaces;
 using Dynami.IdentityServer4.EntityFramework.Options;

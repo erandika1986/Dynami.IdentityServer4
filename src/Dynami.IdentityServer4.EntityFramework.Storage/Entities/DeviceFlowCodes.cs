@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Dynami.IdentityServer4.EntityFramework.Entities
+﻿namespace Dynami.IdentityServer4.EntityFramework.Entities
 {
     /// <summary>
     /// Entity for device flow codes
