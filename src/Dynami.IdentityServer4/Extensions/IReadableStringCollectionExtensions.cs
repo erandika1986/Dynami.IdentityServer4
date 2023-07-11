@@ -1,0 +1,38 @@
+﻿
+using Microsoft.Extensions.Primitives;
+using System.Collections.Specialized;
+using System.Diagnostics;
+
+#pragma warning disable 1591
+
+namespace Dynami.IdentityServer4.Extensions
+{
+    public static class IReadableStringCollectionExtensions
+    {
+        [DebuggerStepThrough]
+        public static NameValueCollection AsNameValueCollection(this IEnumerable<KeyValuePair<string, StringValues>> collection)
+        {
+            var nv = new NameValueCollection();
+
+            foreach (var field in collection)
+            {
+                nv.Add(field.Key, field.Value.First());
+            }
+
+            return nv;
+        }
+
+        [DebuggerStepThrough]
+        public static NameValueCollection AsNameValueCollection(this IDictionary<string, StringValues> collection)
+        {
+            var nv = new NameValueCollection();
+
+            foreach (var field in collection)
+            {
+                nv.Add(field.Key, field.Value.First());
+            }
+
+            return nv;
+        }
+    }
+}

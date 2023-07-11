@@ -1,9 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Description>ASP.NET Core Identity Integration for Dynami IdentityServer</Description>
+		<Title>Dynami.IdentityServer4 AspNetIdentity</Title>
+		<PackageIcon>fingerprint.png</PackageIcon>
+		<PackageTags>OAuth2, OAuth, 2.0, OpenID, Connect, Security, Identity, IdentityServer, ASP.NET, .NET 7</PackageTags>
+		<RepositoryUrl>https://github.com/erandika1986/Dynami.IdentityServer4</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/erandika1986/Dynami.IdentityServer4</PackageProjectUrl>
+		<AssemblyVersion>1.0.0.2</AssemblyVersion>
+		<FileVersion>$(AssemblyVersion)</FileVersion>
+		<Version>$(AssemblyVersion)</Version>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Resources\fingerprint.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dynami.IdentityServer4" Version="1.0.0.2" />
+  </ItemGroup>
 
 </Project>

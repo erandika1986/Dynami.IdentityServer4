@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dynami.IdentityServer4.Storage.Services
+namespace Dynami.IdentityServer4.Services
 {
     public interface ICorsPolicyService
     {

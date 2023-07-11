@@ -1,9 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Title>Dynami IdentityServer4 EntityFramework</Title>
+		<Description>EntityFramework persistence layer for Dynami IdentityServer4</Description>
+		<PackageProjectUrl>https://github.com/erandika1986/Dynami.IdentityServer4</PackageProjectUrl>
+		<PackageIcon>fingerprint.png</PackageIcon>
+		<RepositoryUrl>https://github.com/erandika1986/Dynami.IdentityServer4</RepositoryUrl>
+		<PackageTags>OAuth2, OAuth, 2.0, OpenID, Connect, Security, Identity, IdentityServer, EntityFramework, .NET 7</PackageTags>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<AssemblyVersion>1.0.0.2</AssemblyVersion>
+		<FileVersion>$(AssemblyVersion)</FileVersion>
+		<Version>$(AssemblyVersion)</Version>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Resources\fingerprint.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dynami.IdentityServer4" Version="1.0.0.2" />
+    <PackageReference Include="Dynami.IdentityServer4.EntityFramework.Storage" Version="1.0.0.2" />
+  </ItemGroup>
 
 </Project>

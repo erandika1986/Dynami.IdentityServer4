@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,6 +7,13 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Dynami IdentityServer4 Storage</Title>
     <Description>Storage interfaces and models for Dynami.IdentityServer4</Description>
+    <RepositoryUrl>https://github.com/erandika1986/Dynami.IdentityServer4</RepositoryUrl>
+    <PackageTags>OAuth2, OAuth, 2.0, OpenID, Connect, Security, Identity, IdentityServer, .NET 7</PackageTags>
+    <PackageIcon>fingerprint.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/erandika1986/Dynami.IdentityServer4</PackageProjectUrl>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+	<FileVersion>$(AssemblyVersion)</FileVersion>
+	<Version>$(AssemblyVersion)</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +23,13 @@
 
   <ItemGroup>
     <Folder Include="Stores\Serialization\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Resources\fingerprint.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

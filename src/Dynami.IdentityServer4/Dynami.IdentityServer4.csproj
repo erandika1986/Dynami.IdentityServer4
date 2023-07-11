@@ -1,13 +1,34 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Dynami. dentityServer4</Title>
+	<AssemblyVersion>1.0.0.2</AssemblyVersion>
+	<FileVersion>$(AssemblyVersion)</FileVersion>
+	<Version>$(AssemblyVersion)</Version>
+	<Description>OpenID Connect and OAuth 2.0 Framework for .NET 7+</Description>
+	<PackageProjectUrl>https://github.com/erandika1986/Dynami.IdentityServer4</PackageProjectUrl>
+	<PackageIcon>fingerprint.png</PackageIcon>
+	<RepositoryUrl>https://github.com/erandika1986/Dynami.IdentityServer4</RepositoryUrl>
+	<PackageTags>OAuth2, OAuth, 2.0, OpenID, Connect, Security, Identity, IdentityServer, .NET 7</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dynami.IdentityServer4.Storage\Dynami.IdentityServer4.Storage.csproj" />
+    <None Include="..\Resources\fingerprint.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dynami.IdentityServer4.Storage" Version="1.0.0.2" />
+    <PackageReference Include="IdentityModel" Version="6.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.9" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.31.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
