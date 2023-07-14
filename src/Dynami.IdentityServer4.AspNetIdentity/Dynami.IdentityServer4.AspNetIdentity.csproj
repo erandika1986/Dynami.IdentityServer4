@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -11,7 +11,7 @@
 		<PackageTags>OAuth2, OAuth, 2.0, OpenID, Connect, Security, Identity, IdentityServer, ASP.NET, .NET 7</PackageTags>
 		<RepositoryUrl>https://github.com/erandika1986/Dynami.IdentityServer4</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/erandika1986/Dynami.IdentityServer4</PackageProjectUrl>
-		<AssemblyVersion>1.0.0.2</AssemblyVersion>
+		<AssemblyVersion>1.0.0.8</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 		<Version>$(AssemblyVersion)</Version>
 	</PropertyGroup>
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dynami.IdentityServer4" Version="1.0.0.2" />
+    <PackageReference Include="Dynami.IdentityServer4" Version="1.0.0.8" />
   </ItemGroup>
 
 </Project>

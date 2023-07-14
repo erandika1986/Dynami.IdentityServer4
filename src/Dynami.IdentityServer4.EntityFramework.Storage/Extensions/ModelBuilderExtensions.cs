@@ -33,16 +33,22 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
 
                 client.Property(x => x.ClientId).HasMaxLength(200).IsRequired();
                 client.Property(x => x.ProtocolType).HasMaxLength(200).IsRequired();
-                client.Property(x => x.ClientName).HasMaxLength(200);
-                client.Property(x => x.ClientUri).HasMaxLength(2000);
-                client.Property(x => x.LogoUri).HasMaxLength(2000);
-                client.Property(x => x.Description).HasMaxLength(1000);
-                client.Property(x => x.FrontChannelLogoutUri).HasMaxLength(2000);
-                client.Property(x => x.BackChannelLogoutUri).HasMaxLength(2000);
-                client.Property(x => x.ClientClaimsPrefix).HasMaxLength(200);
-                client.Property(x => x.PairWiseSubjectSalt).HasMaxLength(200);
+                client.Property(x => x.ClientName).HasMaxLength(200).IsRequired(false);
+                client.Property(x => x.ClientUri).HasMaxLength(2000).IsRequired(false);
+                client.Property(x => x.LogoUri).HasMaxLength(2000).IsRequired(false);
+                client.Property(x => x.Description).HasMaxLength(1000).IsRequired(false);
+                client.Property(x => x.FrontChannelLogoutUri).HasMaxLength(2000).IsRequired(false);
+                client.Property(x => x.BackChannelLogoutUri).HasMaxLength(2000).IsRequired(false);
+                client.Property(x => x.ClientClaimsPrefix).HasMaxLength(200).IsRequired(false);
+                client.Property(x => x.PairWiseSubjectSalt).HasMaxLength(200).IsRequired(false);
                 client.Property(x => x.UserCodeType).HasMaxLength(100);
-                client.Property(x => x.AllowedIdentityTokenSigningAlgorithms).HasMaxLength(100);
+                client.Property(x => x.AllowedIdentityTokenSigningAlgorithms).HasMaxLength(100).IsRequired(false);
+                client.Property(x => x.ConsentLifetime).IsRequired(false);
+                client.Property(x => x.Updated).IsRequired(false);
+                client.Property(x => x.LastAccessed).IsRequired(false);
+                client.Property(x => x.UserSsoLifetime).IsRequired(false);
+                client.Property(x => x.UserCodeType).IsRequired(false);
+
 
                 client.HasIndex(x => x.ClientId).IsUnique();
 
@@ -86,7 +92,8 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
                 secret.ToTable(storeOptions.ClientSecret);
                 secret.Property(x => x.Value).HasMaxLength(4000).IsRequired();
                 secret.Property(x => x.Type).HasMaxLength(250).IsRequired();
-                secret.Property(x => x.Description).HasMaxLength(2000);
+                secret.Property(x => x.Description).HasMaxLength(2000).IsRequired(false);
+                secret.Property(x => x.Expiration).IsRequired(false);
             });
 
             modelBuilder.Entity<ClientClaim>(claim =>
@@ -131,11 +138,13 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
 
                 grant.Property(x => x.Key).HasMaxLength(200).ValueGeneratedNever();
                 grant.Property(x => x.Type).HasMaxLength(50).IsRequired();
-                grant.Property(x => x.SubjectId).HasMaxLength(200);
-                grant.Property(x => x.SessionId).HasMaxLength(100);
+                grant.Property(x => x.SubjectId).HasMaxLength(200).IsRequired(false);
+                grant.Property(x => x.SessionId).HasMaxLength(100).IsRequired(false);
                 grant.Property(x => x.ClientId).HasMaxLength(200).IsRequired();
-                grant.Property(x => x.Description).HasMaxLength(200);
+                grant.Property(x => x.Description).HasMaxLength(200).IsRequired(false);
                 grant.Property(x => x.CreationTime).IsRequired();
+                grant.Property(x => x.Expiration).IsRequired();
+                grant.Property(x => x.ConsumedTime).IsRequired(false);
                 // 50000 chosen to be explicit to allow enough size to avoid truncation, yet stay beneath the MySql row size limit of ~65K
                 // apparently anything over 4K converts to nvarchar(max) on SqlServer
                 grant.Property(x => x.Data).HasMaxLength(50000).IsRequired();
@@ -153,10 +162,10 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
 
                 codes.Property(x => x.DeviceCode).HasMaxLength(200).IsRequired();
                 codes.Property(x => x.UserCode).HasMaxLength(200).IsRequired();
-                codes.Property(x => x.SubjectId).HasMaxLength(200);
-                codes.Property(x => x.SessionId).HasMaxLength(100);
+                codes.Property(x => x.SubjectId).HasMaxLength(200).IsRequired(false);
+                codes.Property(x => x.SessionId).HasMaxLength(100).IsRequired(false);
                 codes.Property(x => x.ClientId).HasMaxLength(200).IsRequired();
-                codes.Property(x => x.Description).HasMaxLength(200);
+                codes.Property(x => x.Description).HasMaxLength(200).IsRequired(false);
                 codes.Property(x => x.CreationTime).IsRequired();
                 codes.Property(x => x.Expiration).IsRequired();
                 // 50000 chosen to be explicit to allow enough size to avoid truncation, yet stay beneath the MySql row size limit of ~65K
@@ -184,8 +193,9 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
                 identityResource.ToTable(storeOptions.IdentityResource).HasKey(x => x.Id);
 
                 identityResource.Property(x => x.Name).HasMaxLength(200).IsRequired();
-                identityResource.Property(x => x.DisplayName).HasMaxLength(200);
-                identityResource.Property(x => x.Description).HasMaxLength(1000);
+                identityResource.Property(x => x.DisplayName).HasMaxLength(200).IsRequired(false);
+                identityResource.Property(x => x.Description).HasMaxLength(1000).IsRequired(false);
+                identityResource.Property(x => x.Updated).IsRequired(false);
 
                 identityResource.HasIndex(x => x.Name).IsUnique();
 
@@ -214,9 +224,11 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
                 apiResource.ToTable(storeOptions.ApiResource).HasKey(x => x.Id);
 
                 apiResource.Property(x => x.Name).HasMaxLength(200).IsRequired();
-                apiResource.Property(x => x.DisplayName).HasMaxLength(200);
-                apiResource.Property(x => x.Description).HasMaxLength(1000);
-                apiResource.Property(x => x.AllowedAccessTokenSigningAlgorithms).HasMaxLength(100);
+                apiResource.Property(x => x.DisplayName).HasMaxLength(200).IsRequired(false);
+                apiResource.Property(x => x.Description).HasMaxLength(1000).IsRequired(false);
+                apiResource.Property(x => x.AllowedAccessTokenSigningAlgorithms).HasMaxLength(100).IsRequired(false);
+                apiResource.Property(x => x.Updated).IsRequired(false);
+                apiResource.Property(x => x.LastAccessed).IsRequired(false);
 
                 apiResource.HasIndex(x => x.Name).IsUnique();
 
@@ -230,9 +242,10 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
             {
                 apiSecret.ToTable(storeOptions.ApiResourceSecret).HasKey(x => x.Id);
 
-                apiSecret.Property(x => x.Description).HasMaxLength(1000);
+                apiSecret.Property(x => x.Description).HasMaxLength(1000).IsRequired(false);
                 apiSecret.Property(x => x.Value).HasMaxLength(4000).IsRequired();
                 apiSecret.Property(x => x.Type).HasMaxLength(250).IsRequired();
+                apiSecret.Property(x => x.Expiration).IsRequired(false);
             });
 
             modelBuilder.Entity<ApiResourceClaim>(apiClaim =>
@@ -262,8 +275,8 @@ namespace Dynami.IdentityServer4.EntityFramework.Extensions
                 scope.ToTable(storeOptions.ApiScope).HasKey(x => x.Id);
 
                 scope.Property(x => x.Name).HasMaxLength(200).IsRequired();
-                scope.Property(x => x.DisplayName).HasMaxLength(200);
-                scope.Property(x => x.Description).HasMaxLength(1000);
+                scope.Property(x => x.DisplayName).HasMaxLength(200).IsRequired(false);
+                scope.Property(x => x.Description).HasMaxLength(1000).IsRequired(false);
 
                 scope.HasIndex(x => x.Name).IsUnique();
 
