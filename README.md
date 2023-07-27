@@ -10,3 +10,19 @@ Dynami IdentityServer4 is a free, open source OpenID Connect and OAuth 2.0 frame
 
 Dynami IdentityServer4 Blazor WebAssembly  Complete Demo Application  - https://github.com/erandika1986/Blazor-WebAssembly-Indentity4-Demo
 
+### Adding UI into your Project.
+
+Use this link to add startup UI into your Dynamic IdentityServer4 project. : https://github.com/erandika1986/Dynami.IdentityServer4.UI
+
+This repository contains the controllers, models, views, and CSS files needed for the UI. You can simply clone it and copy the folders into the web project.
+
+Alternatively, you can run this Powershell script from your web project directory to download them automatically:
+
+```
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/erandika1986/Dynami.IdentityServer4.UI/main/getmain.ps1'))
+
+```
+Or using bash one-liner on macOS or Linux:
+```
+curl -L https://raw.githubusercontent.com/erandika1986/Dynami.IdentityServer4.UI/main/getmain.sh | bashh
+```
